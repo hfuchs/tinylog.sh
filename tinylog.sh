@@ -1,4 +1,5 @@
 # 2011-09-13, Created by H Fuchs <github@hfuchs.net>
+# GPLv3-licensed, see COPYING.  Official disclaimer in DISCLAIMER.
 
 # TODO Introduce do_syslog variable?
 # TODO Introduce, for that matter, the concept of output streams?

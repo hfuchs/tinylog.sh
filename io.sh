@@ -1,5 +1,6 @@
 #!/bin/bash
 # 2011-09-13, Created by H Fuchs <github@hfuchs.net>
+# GPLv3-licensed, see COPYING.  Official disclaimer in DISCLAIMER.
 
 # --- IO Redirection setup
 # Currently, file descriptors point like that:

@@ -1,5 +1,6 @@
 #!/bin/bash
 # 2011-09-13, Created by H Fuchs <github@hfuchs.net>
+# GPLv3-licensed, see COPYING.  Official disclaimer in DISCLAIMER.
 
 logfile=my.log
 source ./tinylog.sh
