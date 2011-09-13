@@ -1,9 +1,16 @@
 tinylog.sh
 ============
+2011-09-13, HF
 
 tinylog.sh tries to be a small logging & debugging library for Bash that
 requires exceedingly little mental effort to use in everyday scripting.
-It uses Bashisms like IO redirection.
+It uses Bashisms like IO redirection.  It also is well-nigh
+non-configurable, as it's almost as minimal as it can get away with.  So,
+
+WARNING: Right now, this is very much proof-of-concept material!
+
+Usage
+-------
 
 Just say
 
@@ -26,16 +33,16 @@ That's it.  If you want anything else, go fork yourself (a copy of this
 repo)!
 
 
-Further notice:
+Further notice
+---------------------
 
-  - All files GPLv3-licensed and "Copyright 2011, Hagen Fuchs" (if
-    you're into this sort of thing [and if so, don't - for the love of
-    God! - ever contact me {except, of course, you know how I can
-    GPL-protect my code without those ludicrous disclaimers
-    everywhere}]).  See COPYING if you want a peek at the GPL.
+All files GPLv3-licensed and "Copyright 2011, Hagen Fuchs" (if you're
+into this sort of thing [and if so, don't - for the love of God! - ever
+contact me {except, of course, you know how I can GPL-protect my code
+without those ludicrous disclaimers everywhere}]).  See COPYING if you
+want a peek at the GPL.
 
-  - I'll add a CREDITS and more flesh if anyone finds this helpful.
+I'll add a CREDITS and more flesh if anyone finds this helpful.
 
 
-2011-09-13, HF
 
