@@ -1,18 +1,26 @@
 tinylog.sh
 ============
 
-Low-footprint, low-brainprint logging & debugging library for Bash.
+tinylog.sh tries to be a small logging & debugging library for Bash that
+requires exceedingly little mental effort to use in everyday scripting.
+It uses Bashisms like IO redirection.
 
-Just
+Just say
 
-    LOG='somefile'  # or LOG=`mktemp`
+    logfile='my.log'     # or LOG=`mktemp`
     source ./tinylog.sh
 
 and any output (stdout & stderr) will be written to the logfile.  Use
 
     debug "A message.  Written to log and displayed when run interactively."
-    error "Dito.  Will go to syslog in addition."
-    warn "Same as error."
+    error "Dito.  Goes to syslog in addition."
+    warn  "Same as error, lower panic level."
+
+On the other hand, you'll have to keep in mind that `echo`s will leave
+traces only in the log file.  Except, of course, if you use the highly
+experimental
+
+    echo "Hello" > $stdout
 
 That's it.  If you want anything else, go fork yourself (a copy of this
 repo)!
