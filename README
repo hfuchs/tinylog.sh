@@ -1,0 +1,21 @@
+tinylog.sh
+============
+
+Low-footprint, low-brainprint logging & debugging library for Bash.
+
+Just
+
+    LOG='somefile'  # or LOG=`mktemp`
+    source ./tinylog.sh
+
+and any output (stdout & stderr) will be written to the logfile.  Use
+
+    debug "A message.  Written to log and displayed when run interactively."
+    error "Dito.  Will go to syslog in addition."
+    warn "Same as error."
+
+That's it.  If you want anything else, go fork yourself (a copy of this
+repo)!
+
+2011-09-13, HF
+
