@@ -1,4 +1,5 @@
 #!/bin/bash
+# 2011-09-13, Created by H Fuchs <github@hfuchs.net>
 
 # --- IO Redirection setup
 # Currently, file descriptors point like that:
