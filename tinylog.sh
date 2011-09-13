@@ -11,10 +11,14 @@ function tinylog_init {
 
     # Set up IO redirection if a logfile got specified.
     stdout="/dev/stdout"
+    stderr="/dev/stderr"
     if [ -n "$logfile" ]; then
         exec 3<&1
         exec >> $logfile               # Append, append!
+        exec 4<&2
+        exec 2>> $logfile
         stdout="/dev/fd/3"
+        stderr="/dev/fd/4"             # TODO Useful?
         tinylog_redirect=1
         echo "--- tinylog start (`date +%s`) ---"
     fi
@@ -24,6 +28,7 @@ function tinylog_exit {
     # Restore normal IO flow (Bash idiom, see §20.1 in The Advanced
     # Bash-Scripting Guide).
     [ $tinylog_redirect ] && exec 1>&3 3>&-
+    [ $tinylog_redirect ] && exec 2>&4 4>&-
 }
 
 function debug {
