@@ -43,20 +43,20 @@ function tinylog_exit {
 
 function debug {
     [ $tinylog_interactive ] || return 0
-    echo "[DEBUG] $@"
+    #echo "[DEBUG] $@"  # 2011-10-07, Don't debug() into my log file!
     echo "[DEBUG] $@" > $stdout
 }
 
 function warn {
     logger -t `basename $0` -p user.warning "[WARN] $@"
     echo "[WARN] $@"
-    echo "[WARN] $@" > $stdout
+    echo "[WARN] $@" > $stderr
 }
 
 function error {
     logger -t `basename $0` -p user.err "[ERROR] $@"
     echo "[ERROR] $@"
-    echo "[ERROR] $@" > $stdout
+    echo "[ERROR] $@" > $stderr
 }
 
 tinylog_init
