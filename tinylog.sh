@@ -59,7 +59,16 @@ function error {
     echo "[ERROR] $@" > $stderr
 }
 
-tinylog_init
+function printlog {
+    msg=$1
+    [ -n "$msg" ] && echo $msg > $stdout  # TODO Not at all sure about that.
+    echo "--------- Log Contents ($logfile) ---------" > $stdout
+    cat $logfile > $stdout
+}
+
+#------------------------------ main ------------------------------
 
 trap "tinylog_exit" INT TERM EXIT
+
+tinylog_init
 
