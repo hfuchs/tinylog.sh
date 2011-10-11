@@ -1,0 +1,20 @@
+2011-10-07, Testing!
+
+2011-10-07, from <4E844D82.4020705@pks.mpg.de>:
+
+        === change requests
+
+DONE    * human readable timestamp
+DONE    * run from everywhere
+
+        # Include admin stuff
+DONEish . ${0%/*}/admin-snippets
+
+DONE    * debug nicht ins logfile
+
+        === design sketch
+
+DONE?   * module  || error
+DONE    * Voller Fehlertext bei Error via (cron) Mail
+
+
