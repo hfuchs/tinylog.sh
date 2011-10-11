@@ -14,14 +14,20 @@ Usage
 
 Just say
 
-    logfile='my.log'     # or LOG=`mktemp`
-    source ./tinylog.sh
+    source ${0%/*}/tinylog.sh       # or  `dirname $0`/tinylog.sh  :)
 
-and any output (stdout & stderr) will be written to the logfile.  Use
+and any output (stdout & stderr) will be written to a log file in $TMPDIR.  If
+you want a permanent logfile, just say so:
 
-    debug "A message.  Written to log and displayed when run interactively."
-    error "Dito.  Goes to syslog in addition."
-    warn  "Same as error, lower panic level."
+    logfile="`dirname $0`/my.log"   # or something like it.
+    source ${0%/*}/tinylog.sh
+
+Then, in your script, use
+
+    debug    "A message.  Only displayed when run interactively."
+    error    "Severe message.  Goes to syslog in addition to stdout and the log."
+    warn     "Same as error, lower panic level."
+    printlog # Dump log contents to stdout (not the redirected one).
 
 On the other hand, you'll have to keep in mind that `echo`s will leave
 traces only in the log file.  Except, of course, if you use the highly
