@@ -6,7 +6,7 @@
 # TODO Test for availability of logger and tty.
 # TODO Get rid of bashisms ('source' -> '.')!
 
-function tinylog_init {
+tinylog_init () {
     # Is the user watching us perform?  Better produce some output, then!
     tty -s && tinylog_interactive=1
 
@@ -34,32 +34,32 @@ function tinylog_init {
     fi
 }
 
-function tinylog_exit {
+tinylog_exit () {
     # Restore normal IO flow (Bash idiom, see §20.1 in The Advanced
     # Bash-Scripting Guide).
     [ $tinylog_redirect ] && exec 1>&3 3>&-
     [ $tinylog_redirect ] && exec 2>&4 4>&-
 }
 
-function debug {
+debug () {
     [ $tinylog_interactive ] || return 0
     #echo "[DEBUG] $@"  # 2011-10-07, Don't debug() into my log file!
     echo "[DEBUG] $@" > $stdout
 }
 
-function warn {
+warn () {
     logger -t `basename $0` -p user.warning "[WARN] $@"
     echo "[WARN] $@"
     echo "[WARN] $@" > $stderr
 }
 
-function error {
+error () {
     logger -t `basename $0` -p user.err "[ERROR] $@"
     echo "[ERROR] $@"
     echo "[ERROR] $@" > $stderr
 }
 
-function printlog {
+printlog () {
     msg=$1
     [ -n "$msg" ] && echo $msg > $stdout  # TODO Not at all sure about that.
     echo "--------- Log Contents ($logfile) ---------" > $stdout
