@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 # 2011-09-13, Created by H Fuchs <github@hfuchs.net>
 # GPLv3-licensed, see COPYING.  Official disclaimer in DISCLAIMER.
 
 #logfile=`dirname $0`/my.log     # If you want continuous logs.
 #logfile="/etc/passwd"           # Witness how tinylog copes with that!  Ha!
-source `dirname $0`/tinylog.sh   # If tinylog.sh is in the same directory.
-#source tinylog.sh               # If it's elsewhere and elsewhere is in $PATH.
+. `dirname $0`/tinylog.sh   # If tinylog.sh is in the same directory.
+#. tinylog.sh               # If it's elsewhere and elsewhere is in $PATH.
 
 debug "A debug statement."
 error "An error statement."
