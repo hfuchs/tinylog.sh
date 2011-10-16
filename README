@@ -2,10 +2,10 @@ tinylog.sh
 ============
 2011-09-13, HF
 
-tinylog.sh tries to be a small logging & debugging library for Bash that
-requires exceedingly little mental effort to use in everyday scripting.
-It uses Bashisms like IO redirection.  It also is well-nigh
-non-configurable, as it's almost as minimal as it can get away with.  So,
+tinylog.sh tries to be a small logging & debugging library for Bash
+(actually any POSIX-conforming shell [read dash]) that requires exceedingly
+little mental effort to use in everyday scripting.  Being almost as minimal
+as it can get away with, it is also well-nigh non-configurable.  So,
 
 WARNING: Right now, this is very much proof-of-concept material!
 
@@ -14,13 +14,17 @@ Usage
 
 Just say
 
-    source ${0%/*}/tinylog.sh       # or  `dirname $0`/tinylog.sh  :)
+    . ${0%/*}/tinylog.sh       # or  `dirname $0`/tinylog.sh  :)
 
-and any output (stdout & stderr) will be written to a log file in $TMPDIR.  If
-you want a permanent logfile, just say so:
+or even
+
+    . tinylog.sh               # if tinylog's in your $PATH.
+
+and any output (stdout & stderr) will be written to a log file in $TMPDIR.
+If you want a permanent logfile, just say so:
 
     logfile="`dirname $0`/my.log"   # or something like it.
-    source ${0%/*}/tinylog.sh
+    . ${0%/*}/tinylog.sh
 
 Then, in your script, use
 
@@ -49,6 +53,5 @@ without those ludicrous disclaimers everywhere}]).  See COPYING if you
 want a peek at the GPL.
 
 I'll add a CREDITS and more flesh if anyone finds this helpful.
-
 
 
