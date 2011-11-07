@@ -11,7 +11,7 @@ tinylog_init () {
     tty -s && tinylog_interactive=1
 
     # Use mktemp (and parameter substitution) if $logfile is not specified.
-    test -z "$logfile" && logfile=`mktemp --tmpdir $(basename $0).XXXXX.log`
+    test -z "$logfile" && logfile=$(mktemp --tmpdir $(basename $0).XXXXX.log)
 
     # Set up IO redirection if a logfile got specified.
     stdout="/dev/stdout"
@@ -24,7 +24,7 @@ tinylog_init () {
         stdout="/dev/fd/3"
         stderr="/dev/fd/4"
         tinylog_redirect=1
-        echo "--- tinylog start: `date` (`date +%s`) ---"
+        echo "--- tinylog start: $(date) ($(date +%s)) ---"
     else
         echo "tinylog: Logfile '$logfile' is not writeable!" > $stderr
         echo "tinylog: Script will run - just without superior logging." > $stderr
@@ -48,13 +48,13 @@ debug () {
 }
 
 warn () {
-    logger -t `basename $0` -p user.warning "[WARN] $@"
+    logger -t $(basename $0) -p user.warning "[WARN] $@"
     echo "[WARN] $@"
     echo "[WARN] $@" > $stderr
 }
 
 error () {
-    logger -t `basename $0` -p user.err "[ERROR] $@"
+    logger -t $(basename $0) -p user.err "[ERROR] $@"
     echo "[ERROR] $@"
     echo "[ERROR] $@" > $stderr
 }
