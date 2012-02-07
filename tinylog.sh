@@ -11,7 +11,7 @@ tinylog_init () {
     tty -s && tinylog_interactive=1
 
     # Use mktemp (and parameter substitution) if $logfile is not specified.
-    test -z "$logfile" && logfile=$(mktemp -t $(basename $0).XXXXX.log)
+    test -z "$logfile" && logfile=$(mktemp -t $(basename $0).log.XXXXX)
 
     # Set up IO redirection if a logfile got specified.
     stdout="/dev/stdout"
