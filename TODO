@@ -1,20 +1,35 @@
-2011-10-07, Testing!
+TODO tinylog.sh
+================
+
+2012-03-09, Truncate log file (using truncate(1)?).
+
+2011-10-07, Testing (the eternal item).
+
+
+DONE
+-------
 
 2011-10-07, from <4E844D82.4020705@pks.mpg.de>:
 
-        === change requests
+=== change requests
 
-DONE    * human readable timestamp
-DONE    * run from everywhere
+  * human readable timestamp
 
-        # Include admin stuff
-DONEish . ${0%/*}/admin-snippets
+  * run from everywhere
+    [use explicit/implicit path specification]
 
-DONE    * debug nicht ins logfile
+  * Include admin stuff
+    . ${0%/*}/admin-snippets
+    [nothing to do with tinylog]
 
-        === design sketch
+  * debug nicht ins logfile
 
-DONE?   * module  || error
-DONE    * Voller Fehlertext bei Error via (cron) Mail
+=== design sketch
+
+  * module  || error
+    [larger than tinylog, Scripting Best Practices, perhaps?]
+
+  * Voller Fehlertext bei Error via (cron) Mail
+    [print_log]
 
 
