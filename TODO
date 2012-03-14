@@ -3,8 +3,12 @@ TODO tinylog.sh
 
 2012-03-09, Truncate log file (using truncate(1)?).
 
-2011-10-07, Testing (the eternal item).
+2012-02-08, Delete logfile after each run /unless/ it's been set
+before (+ unless error/warn have been called?)
 
+2012-02-08, Let `printlog` print only when running non-interactively?
+
+2011-10-07, Testing (the eternal item).
 
 DONE
 -------
