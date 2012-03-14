@@ -23,7 +23,7 @@ or even
 and any output (stdout & stderr) will be written to a log file in $TMPDIR.
 If you want a permanent logfile, just say so:
 
-    logfile="`dirname $0`/my.log"   # or something like it.
+    logfile="$(dirname $0)/my.log"   # or something like it.
     . ${0%/*}/tinylog.sh
 
 Then, in your script, use
@@ -34,10 +34,9 @@ Then, in your script, use
     printlog # Dump log contents to stdout (not the redirected one).
 
 On the other hand, you'll have to keep in mind that `echo`s will leave
-traces only in the log file.  Except, of course, if you use the highly
-experimental
+traces only in the log file.  Except, of course, if you use
 
-    echo "Hello" > $stdout
+    echo "Hello" >&$stdout
 
 That's it.  If you want anything else, go fork yourself (a copy of this
 repo)!
